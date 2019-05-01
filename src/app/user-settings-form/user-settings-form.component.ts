@@ -1,5 +1,8 @@
 import { Component, OnInit } from "@angular/core";
+
 import { UserSettings } from "../data/user-settings";
+import {NgForm, NgModel } from "@angular/forms";
+import { DataService } from "../data/data.service";
 
 @Component({
   selector: "app-user-settings-form",
@@ -17,7 +20,7 @@ export class UserSettingsFormComponent implements OnInit {
 
   //Makes a copy using the spread operator.
   //UserSettings : UserSettings = { ...this.originalUserSettings };
-  constructor() {}
+  constructor(private dataService: DataService) {}
   ngOnInit() {}
 
   onBlur(field: NgModel) {
