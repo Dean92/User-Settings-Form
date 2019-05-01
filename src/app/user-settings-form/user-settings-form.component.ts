@@ -7,13 +7,20 @@ import { UserSettings } from "../data/user-settings";
   styleUrls: ["./user-settings-form.component.css"]
 })
 export class UserSettingsFormComponent implements OnInit {
-  userSettings: UserSettings = {
-    name: "Dean",
+  originalUserSettings: UserSettings = {
+    name: null,
     emailOffers: true,
     interfaceStyle: "dark",
     subscriptionType: "Annual",
     notes: "here are some notes..."
   };
+
+  //Makes a copy using the spread operator.
+  //UserSettings : UserSettings = { ...this.originalUserSettings };
   constructor() {}
   ngOnInit() {}
+
+  onSubmit(form: NgForm) {
+    console.log("in onSubmit: ", form.valid);
+  }
 }
